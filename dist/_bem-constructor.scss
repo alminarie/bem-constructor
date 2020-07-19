@@ -48,7 +48,7 @@ $_bem-current-context: ();
 
 @function set-current-context($obj, $name, $selector) {
     $new-current: (#{$obj}: (name: $name, selector: $selector));
-    $_bem-current-context: map-merge($_bem-current-context, $new-current);
+    $_bem-current-context: map-merge($_bem-current-context, $new-current) !global;
 
     @return $selector;
 }
@@ -62,7 +62,7 @@ $_bem-current-context: ();
 
 @function unset-current-context($obj) {
     $new-current: (#{$obj}: null);
-    $_bem-current-context: map-merge($_bem-current-context, $new-current);
+    $_bem-current-context: map-merge($_bem-current-context, $new-current) !global;
 
     @return null;
 }
@@ -95,7 +95,7 @@ $_bem-current-context: ();
     $new-block: ($block: ('elements': (), 'modifiers': ()));
 
     // Update bem log with new block
-    $_bem-log: map-merge($_bem-log, $new-block);
+    $_bem-log: map-merge($_bem-log, $new-block) !global;
 
     // Everything OK
     @return true;
@@ -258,7 +258,7 @@ $_bem-current-context: ();
     }
 
     // // Update the log
-    $_bem-log: map-merge($_bem-log, $updated-block);
+    $_bem-log: map-merge($_bem-log, $updated-block) !global;
 
     @return true;
 
@@ -293,7 +293,7 @@ $_bem-current-context: ();
     $new-scope: ($scope: ());
 
     // Update bem log with new scope
-    $_bem-log: map-merge($_bem-log, $new-scope);
+    $_bem-log: map-merge($_bem-log, $new-scope) !global;
 
     // Everything OK
     @return true;
