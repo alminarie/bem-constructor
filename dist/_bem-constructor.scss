@@ -24,7 +24,7 @@ $bem-throw-errors: true !default;
 // -----------------------------------------------------------------------------
 
 /// Stores the whole BEM structure
-$_bem-log: () !global;
+$_bem-log: ();
 
 // -----------------------------------------------------------------------------
 // Context logger
@@ -37,7 +37,7 @@ $_bem-log: () !global;
 /// Used to stores the current object being constructed
 /// @private
 
-$_bem-current-context: () !global;
+$_bem-current-context: ();
 
 
 // -----------------------------------------------------------------------------
